@@ -1,0 +1,7 @@
+{
+  "devDependencies": {
+    "axios": "^0.18.0",
+    "bee-mobile": "^0.3.1",
+    "flex.css": "^1.1.7"
+  }
+}
