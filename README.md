@@ -14,8 +14,15 @@
 
  - 依次执行
 
-    npm install axios --save-dev
-    
-    npm install axios --save-dev
+    npm install
     
     umi dev
+    
+> 打包
+
+umi build
+
+打包后 代码会在dist 文件加内
+    
+
+
