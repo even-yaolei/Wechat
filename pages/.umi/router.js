@@ -6,7 +6,6 @@ import renderRoutes from 'umi/_renderRoutes';
 
 let Router = DefaultRouter;
 
-
 let routes = [
   {
     "path": "/",
@@ -21,6 +20,11 @@ let routes = [
         "path": "/info",
         "exact": true,
         "component": require('../info.js').default
+      },
+      {
+        "path": "/knp",
+        "exact": true,
+        "component": require('../knp.js').default
       },
       {
         "path": "/learn",
@@ -48,19 +52,20 @@ let routes = [
         "component": require('../weixin.js').default
       },
       {
-        "component": () => React.createElement(require('C:/Users/25459/AppData/Roaming/npm/node_modules/umi/node_modules/_umi-build-dev@0.20.5@umi-build-dev/lib/plugins/404/NotFound.js').default, { pagesPath: 'pages', routes: '[{"path":"/","component":"./layouts\\\\index.js","routes":[{"path":"/","exact":true,"component":"./pages/index.js"},{"path":"/info","exact":true,"component":"./pages/info.js"},{"path":"/learn","exact":true,"component":"./pages/learn.js"},{"path":"/msg","exact":true,"component":"./pages/msg.js"},{"path":"/page","exact":true,"component":"./pages/page.js"},{"path":"/profile","exact":true,"component":"./pages/profile.js"},{"path":"/weixin","exact":true,"component":"./pages/weixin.js"}]}]' })
+        "component": () => React.createElement(require('C:/Users/姚磊/AppData/Roaming/npm/node_modules/umi/node_modules/_umi-build-dev@1.2.7@umi-build-dev/lib/plugins/404/NotFound.js').default, { pagesPath: 'pages', hasRoutesInConfig: false })
       }
     ]
+  },
+  {
+    "component": () => React.createElement(require('C:/Users/姚磊/AppData/Roaming/npm/node_modules/umi/node_modules/_umi-build-dev@1.2.7@umi-build-dev/lib/plugins/404/NotFound.js').default, { pagesPath: 'pages', hasRoutesInConfig: false })
   }
 ];
-
+window.g_plugins.applyForEach('patchRoutes', { initialValue: routes });
 
 export default function() {
   return (
 <Router history={window.g_history}>
-  <Route render={({ location }) =>
-    renderRoutes(routes, {}, { location })
-  } />
-</Router>
+      { renderRoutes(routes, {}) }
+    </Router>
   );
 }

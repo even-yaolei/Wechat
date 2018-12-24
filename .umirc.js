@@ -1,16 +1,18 @@
 export default {
     context: {
-        title:"LivAway"
+        title: "LivAway"
     },
     plugins: [
-      'axios'
+        'axios',
+        'md5'
     ],
-    hashHistory:false,
+
     proxy: {
         "/static/": {
             "target": "http://localhost:8000/",
             "changeOrigin": true,
-            "pathRewrite": { "^/static" : "" }
+            "history": '',
+            "pathRewrite": { "^/static": "" }
         }
     }
 }
